@@ -19,9 +19,8 @@ RUN gpg --verify nomad_${NOMAD_VERSION}_SHA256SUMS.sig nomad_${NOMAD_VERSION}_SH
 RUN grep -E '_linux_amd64' < nomad_${NOMAD_VERSION}_SHA256SUMS | sha256sum -c
 RUN unzip nomad_${NOMAD_VERSION}_linux_amd64.zip
 
-FROM alpine:latest 
+FROM ubuntu:latest 
 LABEL maintainer="Andy Lo-A-Foe <andy.lo-a-foe@philips.com>"
-RUN apk add --no-cache jq ca-certificates curl postgresql-client
 
 WORKDIR /app
 COPY --from=builder /nomad/nomad /app
