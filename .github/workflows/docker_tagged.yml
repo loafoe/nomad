@@ -47,7 +47,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: loafoe/nomad:${{ steps.vars.outputs.tag }},docker.na1.hsdp.io/philipssoftware/nomad:${{ steps.vars.outputs.tag }}
+          tags: loafoe/nomad:${{ steps.vars.outputs.tag }},docker.na1.hsdp.io/loafoe/nomad:${{ steps.vars.outputs.tag }}
           cache-from: type=registry,ref=loafoe/nomad:buildcache
       -
         name: Image digest
