@@ -23,6 +23,6 @@ FROM ubuntu:latest
 LABEL maintainer="Andy Lo-A-Foe <andy.lo-a-foe@philips.com>"
 
 WORKDIR /app
-COPY --from=builder /nomad/nomad /app
+COPY --from=builder /nomad/nomad /usr/local/bin/nomad
 EXPOSE 4646
-CMD ["/app/nomad"]
+CMD ["/usr/local/bin/nomad"]
