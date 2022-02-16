@@ -1,5 +1,5 @@
 FROM alpine:latest AS builder
-ENV NOMAD_VERSION 1.2.3
+ENV NOMAD_VERSION 1.2.6
 
 
 WORKDIR /nomad
