@@ -19,7 +19,7 @@ RUN gpg --verify nomad_${NOMAD_VERSION}_SHA256SUMS.sig nomad_${NOMAD_VERSION}_SH
 RUN grep -E '_linux_amd64' < nomad_${NOMAD_VERSION}_SHA256SUMS | sha256sum -c
 RUN unzip nomad_${NOMAD_VERSION}_linux_amd64.zip
 
-FROM ubuntu:latest 
+FROM ubuntu:20.04 
 LABEL maintainer="Andy Lo-A-Foe <andy.lo-a-foe@philips.com>"
 
 WORKDIR /app
